@@ -1,0 +1,13 @@
+
+\begin{thenomenclature} 
+\nomgroup{A}
+  \item [{$t$}]\begingroup time\nomeqref {4.1}\nompageref{43}
+  \item [{$t$}]\begingroup time\nomeqref {5.1}\nompageref{59}
+\nomgroup{G}
+  \item [{$\delta$}]\begingroup layer thickness\nomeqref {4.1}\nompageref{43}
+  \item [{$\delta$}]\begingroup layer thickness\nomeqref {5.1}\nompageref{59}
+\nomgroup{S}
+  \item [{$i$}]\begingroup inlet\nomeqref {4.1}\nompageref{43}
+  \item [{$i$}]\begingroup inlet\nomeqref {5.1}\nompageref{59}
+
+\end{thenomenclature}

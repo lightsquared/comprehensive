@@ -1,0 +1,202 @@
+%%
+%% This is file `chapmin.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% ths.dtx  (with options: `chapmin')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from chapmin.tex.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file ths.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+
+
+ %% ... sample chapter ...
+
+\lipsum[6]
+
+\section{Introduction}
+\subsubsection{Mass Balance}
+The conservation of mass simply states that mass entering $(m_0)$ the shockwave must equal the mass leaving $(m_1)$ the shockwave.
+
+\begin{equation} \label{eq:mass_conservation}
+m_0 = m_1
+\end{equation}
+We know from the defintion of density $(\rho)$ that,
+\begin{equation} \label{eq:density}
+\rho = \frac{m}{V}
+\end{equation}
+where $m$ is the mass and $V$ is the volume.  We can then subsitute \ref{eq:density} into \ref{eq:mass_conservation} to get,
+\begin{equation} \label{eq:density_volume}
+\rho_0V_0 = \rho_1V_1
+\end{equation}
+We can see from Figure \ref{fig:sw_cons} that the volumes of the cylinder in front of and behind the shock are given by,
+\begin{equation} \label{eq:volume}
+V = AL
+\end{equation}
+where $A$ is the cross sectional area of the cylinder and $L$ is the length of the cylinder.  We are going to assume the cross sectional areas in front of and behind the shock are a constant.  The length of the cylinder is defined as the distance a particle travels away from the shock relative to the shock speed in time $t$.  Therefore the relative particle speed is given by,
+\begin{equation} \label{eq:rel_vel}
+u_{rel} = U - u
+\end{equation}
+where $U$ is the absolute shock speed and $u$ is the absolute particle speed.  Then our length $L$ is,
+\begin{equation} \label{eq:length_rel}
+L = u_{rel}t
+\end{equation}
+or substituting \ref{eq:rel_vel} into \ref{eq:length_rel}
+\begin{equation} \label{eq:length_shock-part}
+L = \left(U-u \right)t
+\end{equation}
+Now substituting \ref{eq:volume} and \ref{eq:length_shock-part} into \ref{eq:density_volume} we have,
+\begin{equation} \label{eq:mass_in_out}
+\rho_0A\left(U-u_0 \right)t = \rho_1A\left(U-u_1 \right)t
+\end{equation}
+and simplifying we have conservation of mass across the shockwave,
+\begin{equation} \label{eq:conservation_of_mass}
+\rho_0\left(U-u_0 \right) = \rho_1\left(U-u_1 \right)
+\end{equation}
+
+\subsubsection{Momentum Balance}
+The conservation of momentum implies that the momentum in front of the shock must equal the momentum after the shock.  The basic equation for momentum is given by,
+\begin{equation} \label{eq:basic_mom}
+p = mu
+\end{equation}
+where $m$ is the mass and $u$ is the velocity of the mass.  We know from Newton's second law of motion that force, $F$, is the product of the mass and acceleraton, $a$.  Since acceleration is the change in velocity divided by time we can connect the concepts of momentum and force with,
+\begin{equation} \label{eq:force_momentum}
+\Delta F = \frac{m(\Delta u)}{t} = \frac{(mu_1-mu_0)}{t} = \frac{p_1-p_0}{t} = \frac{\Delta p}{t}
+\end{equation}
+or the change in force is equal to the rate of change in momentum.  From \ref{eq:mass_in_out} we can substitute for the mass with $m=\rho A(U-u)t$,
+\begin{equation} \label{eq:force_mom}
+\Delta F = \frac{(\rho_1 A(U-u_1)tu_1 - \rho_0 A(U-u_0)tu_0)}{t}
+\end{equation}
+Simplifying we have,
+\begin{equation} \label{eq:force_mom_simp}
+\frac{\Delta F}{A} = \rho_1 u_1(U-u_1) - \rho_0 u_0(U-u_0)
+\end{equation}
+We know that the pressure is force divided the area therefore we can substitute $P = F/A$,
+\begin{equation} \label{eq:press_mom_simp}
+P_1-P_0 = \rho_1 u_1(U-u_1) - \rho_0 u_0(U-u_0)
+\end{equation}
+Using \ref{eq:conservation_of_mass} and solving for $\rho_1$ and substituting into \ref{eq:press_mom_simp} we have,
+\begin{equation} \label{eq:cons_mass_rho_1}
+\rho_1 = \rho_0\frac{(U-u_0)}{(U-u_1)}
+\end{equation}
+\begin{equation} \label{eq:sub_press_mom_simp}
+P_1-P_0 = \rho_0\frac{(U-u_0)}{(U-u_1)} u_1(U-u_1) - \rho_0u_0(U-u_0)
+\end{equation}
+\begin{equation} \label{eq:sub_press_mom_expand}
+P_1-P_0 = \rho_0u_1U-\rho_0u_1u_0 - \rho_0 u_0 U+\rho_0 u_0^2
+\end{equation}
+\begin{equation} \label{eq:sub_press_mom_expand2}
+P_1-P_0 = \rho_0(u_1U - u_1u_0 - u_0 U + u_0^2)
+\end{equation}
+and from factoring we get the standard momentum equation,
+\begin{equation} \label{eq:sub_press_mom_simp2}
+P_1-P_0 = \rho_0(u_1 - u_0)(U - u_0)
+\end{equation}
+
+\subsubsection{Energy Balance}
+The First law of thermodynamics states the total energy of a system is the sum of the internal energy $(E)$, kinetic energy $(KE)$, and potential energy $(PE)$ less any heat $(Q)$ added to the system and any work $(W)$ done by the system:
+\begin{equation} \label{eq:1st_law}
+\Delta E + \Delta KE + \Delta PE = \Delta Q + \Delta W
+\end{equation}
+If we assume there is no change in potential energy and no heat added to the system then \ref{eq:1st_law} becomes,
+\begin{equation} \label{eq:1st_law_no_q}
+\Delta E + \Delta KE = \Delta W
+\end{equation}
+
+The internal energy, $E$, can be expressed as the mass $m$ times the specific internal energy $e$,
+\begin{equation} \label{eq:spec_int_energy}
+U = me = \rho ALe
+\end{equation}
+where the density, $\rho$, multiplied by volume or area, $A$, times the length, $L$, can then replace the mass, $m$.
+The change in internal energy can then be rewritten as,
+\begin{equation} \label{eq:change_energy}
+\Delta E = \rho_1 AL_1e_1 - \rho_0 AL_0e_0
+\end{equation}
+The general equation for kinetic energy is given by:
+\begin{equation} \label{eq:ke}
+KE = \frac{1}{2}mu^2
+\end{equation}
+where $m$ is the mass and $u$ is the velocity.  The change in kinetic energy is then,
+\begin{equation} \label{eq:change_in_ke}
+\Delta KE = \frac{1}{2}m_1u_1^2 - \frac{1}{2}m_0u_0^2
+\end{equation}
+Substituting the mass, $m$, with the density multiplied by the area times length we have,
+\begin{equation} \label{eq:change_in_ke_no_mass}
+\Delta KE = \frac{1}{2}\rho_1 AL_1u_1^2 - \frac{1}{2}\rho_0 AL_0u_0^2
+\end{equation}
+The left-hand-side of \ref{eq:1st_law_no_q} then becomes,
+\begin{equation} \label{eq:lhs_energy}
+\rho_1 AL_1e_1 - \rho_0 AL_0e_0 + \frac{1}{2}\rho_1 AL_1u_1^2 - \frac{1}{2}\rho_0 AL_0u_0^2 = W
+\end{equation}
+The rate of thermodynamic work done on or by a system is referred to as pressure-volume work and is defined as,
+\begin{equation} \label{eq:work}
+\frac{W}{t} = \frac{P_1V_1 - P_0V_0}{t}
+\end{equation}
+The work volume divided by the time can be replaced with the area $A$ multiplied by the velocity, $\frac{V}{t} = Au$.  Substituting back into \ref{eq:work},
+\begin{equation} \label{eq:work2}
+\frac{W}{t} = P_1Au_1 - P_0Au_0
+\end{equation}
+Therefore the rate of work done is equal to the rate of change of the internal and kinetic energy,
+\begin{equation} \label{eq:both_sides_energy}
+P_1Au_1 - P_0Au_0 = \frac{\rho_1 AL_1e_1 - \rho_0 AL_0e_0}{t} + \frac{\frac{1}{2}\rho_1 AL_1u_1^2 - \frac{1}{2}\rho_0 AL_0u_0^2}{t}
+\end{equation}
+Dividing through by $A$ we have,
+\begin{equation} \label{eq:both_sides_energy_no_A1}
+P_1u_1 - P_0u_0 = \frac{\rho_1 L_1e_1 - \rho_0 L_0e_0}{t} + \frac{\frac{1}{2}\rho_1 L_1u_1^2 - \frac{1}{2}\rho_0 L_0u_0^2}{t}
+\end{equation}
+Recalling \ref{eq:length_shock-part} and substituting in \ref{eq:both_sides_energy_no_A1} we have the time $t$ canceling out,
+\begin{equation} \label{eq:both_sides_energy_no_A2}
+P_1u_1 - P_0u_0 = \rho_1 (U-u_1)e_1 - \rho_0 (U-u_0)e_0 + \frac{1}{2}\rho_1 (U-u_1)u_1^2 - \frac{1}{2}\rho_0 (U-u_0)u_0^2
+\end{equation}
+Consolidating the $(U-u)$ terms and factoring out the $\rho$ we can rewrite as,
+\begin{equation} \label{eq:both_sides_energy_no_A3}
+P_1u_1 - P_0u_0 = \rho_1 (U-u_1)\left(e_1 + \frac{1}{2} u_1^2\right) - \rho_0 (U-u_0)\left(e_0 + \frac{1}{2} u_0^2\right)
+\end{equation}
+Recalling from \ref{eq:conservation_of_mass} the conservation of mass we can divide both sides by $\rho(U-u)$,
+\begin{equation} \label{eq:both_sides_energy_no_A4}
+\frac{P_1u_1 - P_0u_0}{\rho_0 (U-u_0)} = \left(e_1 + \frac{1}{2} u_1^2\right) - \left(e_0 + \frac{1}{2} u_0^2\right)
+\end{equation}
+Rearranging we have conservation of energy equation,
+\begin{equation} \label{eq:both_sides_energy_no_A5}
+e_1-e_0 = \frac{P_1u_1 - P_0u_0}{\rho_0 (U-u_0)} - \frac{1}{2}(u_1^2-u_0^2)
+\end{equation}
+
+
+\subsection{A Third-Level Heading}
+\lipsum[10]
+\subsubsection{A fourth-level heading with a very long and complicated title
+to once again verify the formatting}
+\lipsum[10-12]
+\subsubsection{Another fourth-level heading}
+\lipsum[10-12]
+\paragraph{A fifth-level heading also with a very long and complicated
+  title to verify the formatting}
+\lipsum[20]
+\paragraph{Another fifth-level heading}
+\lipsum[21]
+
+\subsection{Another third-level heading but with a very long and
+  complicated title to verify the formatting}
+\lipsum[13-15]
+
+\section{Discussion Using a Second-Level Heading
+  Which is Really Long So That It Produces a Two-Line
+  Toc Entry}
+\lipsum[10-12]
+
+
+\endinput
+%%
+%% End of file `chapmin.tex'.

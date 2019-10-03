@@ -1,0 +1,37 @@
+---
+title: "Re-Plot of Kingery Bulmash Incident Impulse"
+output: html_notebook
+---
+
+The references for this plot are:
+2.  
+6.  R. Reisler, B. Pettit, and L. Kennedy, "Air Blast Data from Height-of- Burst Studies in Canada, Vol. I: HOB 5.4 to 71.9 Feet," BRL Report No. 1950, December 1976 (AD B016344L).
+
+7.  R.Reisler,B.Pettit,andL.Kennedy,"AirBlast Data from Height-of- Burst Studies in Canada, Vol 11: HOB 45.4 to 144.5 Feet," BRL Report No. 1990,May 1977.
+
+8.  M. Swisdak Jr., "Explosion Effects and Properties, Part I, Explosion Effects in Air," NSWC/WOL/TR 75-116, October 1975.
+
+9.  Nuclear Weapons Blast Phenomena Volume IV,"Simulation of Nuclear Airblast Phenomena with High Explosives (U)," DASA 1200-IV, July 1973 (SECRET FRD).
+
+I have been unable to get these from a Google search.  I need to get them from my work computer with my CAC.
+
+```{r}
+library(ggplot2)
+pdf(file = "II_KB.pdf", width= 6, height = 4)
+ref_data <- read.table("incident_impulse_data.csv", header=TRUE, sep=",")
+breaks <- 10^(-10:10)
+minor_breaks <- rep(1:9, 21)*(10^rep(-10:10, each=9))
+ggplot(data=ref_data, aes(x=x,y=y, color=Reference)) +         geom_point(aes(shape=Reference)) +
+        scale_x_log10(breaks = breaks, minor_breaks = minor_breaks) +
+        scale_y_log10(breaks = breaks, minor_breaks = minor_breaks) +
+        annotation_logticks() +
+        coord_equal() +
+        theme_bw(base_size = 12, base_family = "Times") +
+        xlab(expression(Scaled~Distance~frac(ft,sqrt(lb,3)))) +
+        ylab(expression(Time~of~Arrival~frac(msec,sqrt(lb,3))))
+dev.off
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file).
