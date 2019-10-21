@@ -9,7 +9,10 @@ The engineering standard for blast-resistant design is the Unified Facilities Cr
   \item reflected-impulse.
 \end{itemize}
 
-The Kingery-Bulmash (KB) models are used to estimate these blast-parameters in the UFC.  The models are presented as a series of charts (free-air spherical and surface hemispherical) and are based on higher-order polynomials \cite{Kingery1984}.  The KB models are valid over a scaled distance of, $Z = 0.134 - 100$, where $Z=R/W^{1/3}$, $R$ is the distance from the center of the charge to the point of interest and $W$ is the charge weight (mass). Interestingly, at small scaled distances the KB models for incident impulse and positive phase duration show a local maximum, see Figures \ref{fig:KB_incident_impulse} and \ref{fig:KB_ppd}.  Visually, the shift in the incident impulse caused by the local maximum increases the impulse by approximately 
+The Kingery-Bulmash (KB) models are used to estimate these blast-parameters in the UFC.  The models are presented as a series of charts (free-air spherical and surface hemispherical) and are based on higher-order polynomials \cite{Kingery1984}.  Large scale testing of the explosive, trinitrotoluene (TNT), was used to develop the models.  Because the models are curve fits of test data, they are only valid over the scaled distances of the corresponding tests, $Z = 0.134 - 100$, where, 
+
+$$Z=R/W^{1/3}$$
+and $R$ is the distance from the center of the charge to the point of interest and $W$ is the charge weight (mass). Interestingly, at small scaled distances the KB model for incident-impulse shows a local maximum at a scaled distance of $2.5\:\frac{ft}{\sqrt[3]{lb}}$, see Figure \ref{fig:KB_incident_impulse}.  The local maximum results in an increase in the incident-impulse.  On average the incident impulse is increased by $15$ times compared to a curve where no local maximum occurs, see Figure \ref{fig:KB_avg_inc}.  The increase in impulse results in a larger impulsive loading on any nearby structures. Unfortunately, close-in blast loads represent a common threat for the protective design of buildings, bridges and critical infrastructure \cite{Shin2015a}\cite{Shin2014}.That increase also results in a corresponding increase in the construction cost of blast hardened facilities as indicated in Figure \ref{fig:KB_cost}.  
 
 \begin{figure}[tb]
   \begin{center}
@@ -18,7 +21,26 @@ The Kingery-Bulmash (KB) models are used to estimate these blast-parameters in t
   \caption{Kingery Bulmash incident impulse plot showing the local maximum at a scaled distance of approximately $2.5\:\frac{ft}{lb^{1/3}}$\citep{Kingery1984}.}
 \label{fig:KB_incident_impulse}
 \end{figure}%
-   
+
+\begin{figure}[tb]
+  \begin{center}
+   \includegraphics[width=6in]{/Users/skmcneill/Documents/Github/comprehensive/5_reports/figures/fig_ii_times_larger.png}
+  \end{center}
+  \caption{Average increase in the impulse due to the local maximum is approximately $15.36$ times the log linear fit of the KB incident impulse data that was less than or equal to a scaled distance of $2.5\:\frac{ft}{lb^{1/3}}$.}
+\label{fig:KB_avg_inc}
+\end{figure}%
+
+\begin{figure}[tb]
+  \begin{center}
+   \includegraphics[width=6in]{/Users/skmcneill/Documents/Github/comprehensive/5_reports/figures/standoff_cost.png}
+  \end{center}
+  \caption{The effects of explosive standoff distance on the cost of various structural and non-structural components (adapted from \citep{Smith2016}).}
+\label{fig:KB_cost}
+\end{figure}%
+
+It is hypothesized in this research, that the local maximum observed in the KB incident impulse model is due to the of afterburn of the products of reaction of TNT.  Because the degree of afterburn is a function of the oxygen-balance of the explosive, then explosives with different oxygen-balances would produce more or less afterburn.  Variations in afterburn would then correspond to variations in the incident impulse developed.
+  
+  
 \begin{figure}[tb]
   \begin{center}
    \includegraphics[width=6in]{/Users/skmcneill/Documents/Github/comprehensive/5_reports/figures/fig_ppd_no_data.png}
@@ -27,18 +49,23 @@ The Kingery-Bulmash (KB) models are used to estimate these blast-parameters in t
 \label{fig:KB_ppd}
 \end{figure}%
 
-
-In the case of the scaled incident impulse, this local maximumThese inflection points result in an increase in the impulse loading that a structure must be able to withstand. Additionally, the KB positive phase duration data shows significant data scatter at small scaled distances.  calling into question the validity of the KB model at these .   Unfortunately, close-in blast loads represent a common threat for the protective design of buildings, bridges and critical infrastructure \cite{Shin2015a}\cite{Shin2014}.
-
-It is hypothesized in this research, that the data scatter and the non-linear behavior of two of the KB models at small scaled distances is due to the presence of afterburn of the detonation reaction products.  The two KB models that show this non-linear behavior in the form of inflection points are the incident-impulse and the postive-phase-duration, see Figures \ref{fig:KB_incident_impulse} and \ref{fig:KB_TOA}. 
-  
-
 \section{Statement of the Problem}
-Detonations at small scaled-distances represent a common threat to the blast-resistant design of buildings, bridges and critical infrastructure due to proximity in urban areas and lack of protection in rural locations. The Kingery-Bulmash curves used to predict the blasting loading show significant non-linear behavior (inflection points) at small scaled distances.  This non-linear behavior at small scaled distances is not well understood nor fully supported by empirical data.
-In this research, we examine the influence of explosive oxygen-balance on the non-linear behavior observed in the Kingery-Bulmash curves. We record incident-overpressure, incident-impulse, time-of-arrival, positive-phase-duration, shock-velocity, fireball diameter, and fireball temperature for three different explosives with increasing oxygen balance in the air and three different explosives with increasing oxygen balance in neutral atmospheres.   Our objective is to determine the degree to which differences in explosive oxygen-balance on the measured blast parameters are causing the non-linear behavior observed.  Additionally, revised Kingery-Bulmash models of relevant blast parameters as a function of oxygen-balance will be developed based on the blast parameters measured during testing.
+Detonations at small scaled-distances represent a common threat to the blast-resistant design of buildings, bridges and critical infrastructure due to proximity in urban areas and lack of protection in rural locations. The Kingery-Bulmash incident impulse curve used to predict the blasting loading shows significant non-linear behavior (local maximum) at small scaled distances.  This non-linear behavior at small scaled distances is not well understood.
+%TODO Add a plot of the KB II and PPD with a common x-axis (SD).
+%TODO Insert a discussion about the PPD here.  Need to tie or correlate the PPD and II.
+In this research, the influence of explosive oxygen-balance on the non-linear behavior observed in the KB incident impulse curve will be examined. Three different explosives with increasing oxygen balance will be detonated and the following blast parameters will be measured:
+\begin{itemize}
+	\item incident-overpressure
+	\item incident-impulse
+	\item time-of-arrival
+	\item positive-phase-duration
+	\item fireball diameter
+	\item fireball temperature.
+\end{itemize}
+Finally, a set of validation experiments will be conducted in a neutral atmosphere (no oxygen present) using the same explosives and measuring the same blast parameters. Our objective is to determine the degree to which differences in explosive oxygen-balance causes the non-linear behavior observed.  Additionally, a set of revised Kingery-Bulmash models will be developed that include the oxygen-balance as a parameter.
 
 \section{Research and Scope Objectives}
-The primary objective of this research is to quantify the effect explosive oxygen balance has on shockwave blast parameters at small scaled distances. This will lead to the secondary objective, the development of an improved Kingery Bulmash model that accounts for the oxygen balance of the explosive. The elements of these objectives include the following: 
+The primary objective of this research is to quantify the effect explosive oxygen balance has on blast parameters at small scaled distances. This will lead to the secondary objective, the development of an improved Kingery Bulmash model that accounts for the oxygen balance of the explosive. The elements of these objectives include the following: 
 \begin{itemize}
     \item determine the near field positive-phase-duration, incident impulse, and other relevant blast parameters of explosives with a range of oxygen balances,
     \item evaluate fireball diameter and temperature for explosives with a range of oxygen-balances.
