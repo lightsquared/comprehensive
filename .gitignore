@@ -138,3 +138,15 @@ sympy-plots-for-*.tex/
 # OS generated files
 .DS_Store
 .DS_Store?
+
+# Video
+*.wmv
+*.mpg
+*.mpeg
+*.mp4
+*.mov
+*.flv
+*.avi
+*.ogv
+*.ogg
+*.webm
