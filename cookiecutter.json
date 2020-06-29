@@ -1,11 +1,3 @@
-{
-    "full_name": "S. Kevin McNeill",
-    "email": "skmt27@mst.edu",
-    "github_username": "lightsquared",
-    "project_name": "Name of your science project",
-    "project_slug": "comprehensive",
-    "project_short_description": "A short description of your project",
-    "release_date": "2018-12-18",
-    "version": "0.1.0",
-    "_extensions": ["jinja2_time.TimeExtension"]
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:c3caacc8c67a9befac53d41ea5f554137d22d95ce1fc130e1f78bfc8b1cfacd0
+size 379
